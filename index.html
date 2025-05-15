@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Page Title</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4Q6Gf2aSP4eDXB8Miphtr37CMZZQ5oXLH2yaXMJ2w8e2ZtHTl7GptT4jmndRuHDT" crossorigin="anonymous">
+    <link rel='stylesheet' type='text/css' media='screen' href='index.css'>
+    
+</head>
+<body>
+    <header>
+        <h1>Guia Interno de Conduta – Segurança de Dados</h1>
+        <p><strong>Reflexão baseada no filme Snowden:</strong><br>
+            É nesse sentido que o filme Snowden pode nos alertar sobre a vigilância digital: o quanto ela pode ser invisível e, ao mesmo tempo, penetrante. O desenvolvedor front-end deve sempre manter esse aviso em mente. Os dados sensíveis, como documentos, endereços e senhas, não podem ser subestimados. A falha do front-end formará as portas abertas da violação da segurança do sistema. Portanto, o desenvolvedor é responsável por garantir a proteção dos dados, desde o momento da coleta, e um dos métodos é validar a coleta de dados, usar o protocolo HTTPS e evitar meios de armazenamento inseguros. Além disso, é essencial garantir transparência com o usuário, deixando claro como seus dados serão usados, o cuidado com a privacidade começa na interface e exige responsabilidade ética e técnica, para que tais dados não sejam utilizados de forma descuidada ou lesiva, não havendo por consequência, possíveis danos tanto para quem fez o site e/ou interface, quanto para o usuário.</p>
+      </header>
+      
+      <section id="formulario">
+        <h2>Exemplo de Formulário</h2>
+        <!-- Com comentários -->
+        <form>
+            <div id="inputs">
+            <!-- O campo CPF exige mais cuidado porque é um dado pessoal sensível -->
+            <input class="formu" id="cpf" maxlength="14"  type="text" name="cpf" placeholder="CPF - Exige mais cuidado porque é um dado pessoal sensível" onkeypress="return somenteNumeros(event)">
+      
+            <!-- O campo de senha deve ser mascarado para proteger o usuário de exposições -->
+              <input class="formu" type="password" name="senha" placeholder="Senha - Deve ser mascarado para proteger o usuário de exposições">
+        
+            <!-- O e-mail deve ser protegido para evitar phishing e acesso não autorizado -->
+              <input class="formu" type="email" name="email" placeholder="E-mail - Deve ser protegido para evitar phishing e acesso não autorizado">
+        
+            <!-- Endereços físicos podem ser usados para rastreamento ou engenharia social -->
+              <input class="formu" type="text" name="endereco" placeholder="Endereço - Podem ser usados para rastreamento ou engenharia social">
+            </div>
+            <div id="form-botao">
+                <button id="sub" type="submit">Enviar</button>
+            </div>
+          
+      
+          
+        </form>
+      </section>
+      
+      <section id="checklista">
+        <h2>Checklist de Boas Práticas com Dados Sensíveis</h2>
+        <ul>
+          <li><input type="checkbox"> Informar o usuário sobre como os dados serão utilizados</li>
+          <li><input type="checkbox"> Utilizar HTTPS em todas as páginas que coletam ou transmitem dados</li>
+          <li><input type="checkbox"> Não exibir senhas ou informações sigilosas em campos visíveis</li>
+          <li><input type="checkbox"> Nunca armazenar dados sensíveis no LocalStorage ou em cookies inseguros</li>
+          <li><input type="checkbox"> Utilizar bibliotecas confiáveis para validação e criptografia de dados</li>
+          <li><input type="checkbox"> Evitar logar dados sensíveis no console do navegador</li>
+          <li><input type="checkbox"> Implementar máscaras de entrada para evitar erros e capturas indevidas</li>
+        </ul>
+      </section>
+      
+      
+      <div id="banner-consentimento">
+        Este site coleta dados pessoais. Ao prosseguir, você concorda com nossa 
+        <a href="" target="_blank">política de privacidade</a>.
+        <button onclick="document.getElementById('banner-consentimento').style.display='none'" style="margin-left: 10px;">Entendi</button>
+      </div>
+      <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/js/bootstrap.bundle.min.js" integrity="sha384-j1CDi7MgGQ12Z7Qab0qlWQ/Qqz24Gc6BM0thvEMVjHnfYGF0rmFCozFSxQBxwHKO" crossorigin="anonymous"></script>
+      <script src='main.js'></script>
+</body>
+</html>
